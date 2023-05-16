@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .card {
+            background-color: #fff;
+            border-radius: 6px;
+            box-shadow: 0 1px 0 rgba(9, 30, 66, 0.25), 0 0 0 1px rgba(9, 30, 66, 0.08);
+            width: 80%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .card:hover .card-content {
+            transform: scale(1.2);
+        }
+
+        .card-content {
+            padding: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card-content h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .card-content a {
+            background-color: #0366d6;
+            border-radius: 4px;
+            color: #fff;
+            display: inline-block;
+            padding: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .card-content a:hover {
+            background-color: #002d5f;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card" id="myCard">
+        <div class="card-content">
+            <h2>Card Title</h2>
+            <p>Card description</p>
+            <a href="#">Read more</a>
+        </div>
+    </div>
+
+    <script>
+        const card = document.getElementById('myCard');
+        const cardContent = card.querySelector('.card-content');
+        const cardWidth = card.offsetWidth;
+        const cardHeight = card.offsetHeight;
+
+        card.addEventListener('mousemove', function (e) {
+            const mouseX = e.clientX - card.offsetLeft;
+            const mouseY = e.clientY - card.offsetTop;
+
+            const centerX = cardWidth / 2;
+            const centerY = cardHeight / 2;
+
+            const deltaX = mouseX - centerX;
+            const deltaY = mouseY - centerY;
+
+            const percentX = deltaX / centerX;
+            const percentY = deltaY / centerY;
+
+            const scaleX = 1.2;
+            const scaleY = 1.2;
+
+            const translateX = -1 * percentX * 10;
+            const translateY = -1 * percentY * 10;
+
+            cardContent.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scaleX}, ${scaleY})`;
+        });
+
+        card.addEventListener('mouseout', function () {
+            cardContent.style.transform = 'translate(0, 0) scale(1, 1)';
+        });
+
+    </script>
+</body>
+
+</html>
