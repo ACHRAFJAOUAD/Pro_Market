@@ -833,8 +833,20 @@ footer {
   .card img {
     left: 33%;
   }
+
   .HeroSection {
     height: 40vh;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .HeroSection h1 {
+    margin-top: 17px;
+  }
+
+  .ourServices {
+    margin-top: 10px;
   }
 
   .imgs img:nth-child(1),
@@ -861,14 +873,69 @@ footer {
   .img {
     display: none;
   }
+
   .HeroSection {
     margin: 0;
   }
 }
 
 @media (max-width: 400px) {
-  .HeroSection {
-    margin: 0;
+  .HeroSection h1 {
+    font-size: 20px;
+  }
+
+  .HeroSection a {
+    font-size: 16px;
+    padding: 6px 5px;
+    border-radius: 5px;
+  }
+
+  .desney .text-area h4,
+  .text-area h4 {
+    font-size: 12px;
+  }
+
+  .desney .text-area h2,
+  .text-area h2 {
+    font-size: 20px;
+  }
+
+  .desney .text-area span {
+    font-size: 29px;
+  }
+  .ourServices .text-area span img {
+    width: 170px;
+  }
+}
+
+@media (max-width: 300px) {
+  .logo img {
+    width: 130px;
+  }
+  .ourServices .text-area span img {
+    width: 150px;
+  }
+
+  .cards label {
+    width: 220px;
+    height: 240px;
+  }
+  .infos .name {
+    font-size: 20px;
+    margin-top: 0;
+  }
+  .infos p {
+    font-size: 8px;
+    font-weight: 100;
+    margin-top: 0;
+  }
+
+  .card img {
+    left: 34%;
+    width: 70px;
+  }
+  .ourServices {
+    margin-top: 0;
   }
 }
 
@@ -897,3 +964,4 @@ footer {
     font-size: 10px;
   }
 }
+
